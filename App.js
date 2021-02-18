@@ -6,6 +6,7 @@ import { StyleSheet, Text, View,
   TouchableHighlight,
   TouchableNativeFeedback,
   Button,
+  Alert,
   SafeAreaView, Image } from 'react-native';
 
 export default function App() {
@@ -22,7 +23,11 @@ export default function App() {
         </View>
       </TouchableOpacity>
 
-      <Button color="orange" title="Click Me" onPress={() => alert('button tapped')}/>
+      <Button color="orange" title="Click Me" 
+        onPress={() => Alert.alert('MyTitle', 'My Message', [
+          { text: 'Yes', onPress: ()=> console.log('Yes') },
+          { text: 'No', onPress: () => console.log('No') }
+        ])}/>
 
         {/* <Image source={{ 
           width: 200, 
