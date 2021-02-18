@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,
   TouchableWithoutFeedback, 
   TouchableOpacity, 
   TouchableHighlight,
+  TouchableNativeFeedback,
   SafeAreaView, Image } from 'react-native';
 
 export default function App() {
