@@ -5,6 +5,7 @@ import { StyleSheet, Text, View,
   TouchableOpacity, 
   TouchableHighlight,
   TouchableNativeFeedback,
+  Button,
   SafeAreaView, Image } from 'react-native';
 
 export default function App() {
@@ -15,11 +16,14 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>Hello World</Text>
       <StatusBar style="auto" />
-      <TouchableHighlight onPress={() => console.log("Image Touched")}>
+      <TouchableOpacity onPress={() => console.log("Image Touched")}>
         <View>
           <Image source={require('./assets/tanner2.png')}/>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
+
+      <Button color="orange" title="Click Me" onPress={() => console.log("Button Clicked")}/>
+
         {/* <Image source={{ 
           width: 200, 
           height: 300,
