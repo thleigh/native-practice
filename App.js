@@ -22,7 +22,7 @@ export default function App() {
         </View>
       </TouchableOpacity>
 
-      <Button color="orange" title="Click Me" onPress={() => console.log("Button Clicked")}/>
+      <Button color="orange" title="Click Me" onPress={() => alert('button tapped')}/>
 
         {/* <Image source={{ 
           width: 200, 
