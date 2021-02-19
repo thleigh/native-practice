@@ -24,10 +24,16 @@ export default function App() {
       </TouchableOpacity>
 
       <Button color="orange" title="Click Me" 
-        onPress={() => Alert.alert('MyTitle', 'My Message', [
-          { text: 'Yes', onPress: ()=> console.log('Yes') },
-          { text: 'No', onPress: () => console.log('No') }
-        ])}/>
+
+        // onPress={() => Alert.alert('MyTitle', 'My Message', [
+        //   { text: 'Yes', onPress: ()=> console.log('Yes') },
+        //   { text: 'No', onPress: () => console.log('No') }
+        // ])}/>
+
+        onPress={() =>
+        
+          Alert.prompt("My Title", "My Message", text => console.log(text))}
+      />
 
         {/* <Image source={{ 
           width: 200, 
