@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { StyleSheet, Text, View, 
   TouchableWithoutFeedback, 
   TouchableOpacity, 
@@ -56,5 +57,8 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
   },  
+  header: {
+
+  }
 });
 ``
