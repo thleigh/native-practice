@@ -19,7 +19,7 @@ export default function App() {
       <StatusBar style="auto" />
       <TouchableOpacity onPress={() => console.log("Image Touched")}>
         <View>
-          <Image source={require('./assets/tanner2.png')}/>
+          <Image source={require('./assets/tanner2.png')} style={styles.image}/>
         </View>
       </TouchableOpacity>
 
@@ -43,6 +43,8 @@ export default function App() {
   );
 }
 
+const containerStyle = {backgroundColor: "orange"}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,5 +52,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    width: 200,
+    height: 200,
+  },  
 });
 ``
