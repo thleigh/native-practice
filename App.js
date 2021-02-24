@@ -9,52 +9,24 @@ import { StyleSheet, Text, View,
   Button,
   Alert,
   SafeAreaView, Image } from 'react-native';
+import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
 
 export default function App() {
   
   const handlePress = () => console.log("text clicked");
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>Hello World</Text>
-      <StatusBar style="auto" />
-      <TouchableOpacity onPress={() => console.log("Image Touched")}>
-        <View>
-          <Image source={require('./assets/tanner2.png')} style={styles.image}/>
-        </View>
-      </TouchableOpacity>
+    <NavigationContainer>
+      <DrawerLayout.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={HomeStackScreen} />
 
-      <Button color="orange" title="Click Me" 
-
-        // onPress={() => Alert.alert('MyTitle', 'My Message', [
-        //   { text: 'Yes', onPress: ()=> console.log('Yes') },
-        //   { text: 'No', onPress: () => console.log('No') }
-        // ])}/>
-
-        onPress={() =>
-        
-          Alert.prompt("My Title", "My Message", text => console.log(text))}
-      />
-
-        {/* <Image source={{ 
-          width: 200, 
-          height: 300,
-          uri: "https://picsum.photos/200/300"}}/> */}
-    </SafeAreaView>
+        <Drawer.Screen name="Details" component={DetailsStackScreen}/>
+      </DrawerLayout.Navigator>
+    </NavigationContainer>
   );
 }
 
 const containerStyle = {backgroundColor: "orange"}
-
-// const bottomTabNavigator = createBottomTabNavigator(
-//   {
-//     Home: HomeScreen,
-//     Explore: ExploreScreen,
-//   },
-//   {
-//     initialRouteName: 'Home'
-//   }
-// );
 
 const styles = StyleSheet.create(
   {
