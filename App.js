@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View, 
   TouchableWithoutFeedback, 
   TouchableOpacity, 
@@ -10,34 +10,37 @@ import { StyleSheet, Text, View,
   Alert,
   SafeAreaView, Image } from 'react-native';
 
-import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
 const Tab = createBottomTabNavigator();
 
-export default function App() {
-  
-  const handlePress = () => console.log("text clicked");
-
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
+const HomeScreen = () => {
+    return (
+      <View style={{ flex:1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>Home Screen</Text>
+      </View>
   );
 };
 
-const styles = StyleSheet.create (
-  {
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    image: {
-      width: 200,
-      height: 200,
-    },  
-  }
-);
+const App = () => {
+  return (
+    <NavigationContainer>
+      
+    </NavigationContainer>
+  );
+};
+
+// const styles = StyleSheet.create (
+//   {
+//     container: {
+//       flex: 1,
+//       backgroundColor: '#fff',
+//       alignItems: 'center',
+//       justifyContent: 'center',
+//     },
+//     image: {
+//       width: 200,
+//       height: 200,
+//     },  
+//   }
+// );
+
+export default HomeScreen
