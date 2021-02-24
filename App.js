@@ -9,26 +9,25 @@ import { StyleSheet, Text, View,
   Button,
   Alert,
   SafeAreaView, Image } from 'react-native';
+
 import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   
   const handlePress = () => console.log("text clicked");
 
   return (
-    <NavigationContainer>
-      <DrawerLayout.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
-
-        <Drawer.Screen name="Details" component={DetailsStackScreen}/>
-      </DrawerLayout.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
   );
-}
+};
 
-const containerStyle = {backgroundColor: "orange"}
-
-const styles = StyleSheet.create(
+const styles = StyleSheet.create (
   {
     container: {
       flex: 1,
